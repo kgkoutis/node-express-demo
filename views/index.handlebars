@@ -1,0 +1,20 @@
+<h1 class="text-center mb-3">{{title}}</h1> <!--The content you place is being handled in the double braces-->
+<form action="/api/members" method="post" accept-charset="utf-8" class="md-4">
+   <div class="form-group">
+       <label for="name">Name</label>
+       <input type="text" value="" name="name" class="form-control"/>
+   </div> 
+   <div class="form-group">
+       <label for="email">Email</label>
+       <input type="email" value="" name="email" class="form-control"/>
+   </div> 
+   <input type="submit" value="Add Member" class="btn btn-primary btn-block"/>
+</form>
+<h4>Members</h4>
+<ul class="list-group">
+    {{#each members}}
+        <li class="list-group-item">{{this.name}}: {{this.email}}</li>
+    {{/each}} 
+</ul>
+
+<a href="/api/members" class="btn btn-info mt-4">Visit API</a>
